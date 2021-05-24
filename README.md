@@ -33,6 +33,21 @@ ulimit -u 8192
 docker-compose up
 ```
 
+### SonarQube IP address for jenkins
+```
+http://sonarqube:9000/
+```
+
+### Expose jenkins
+```
+ngrok http 8080
+```
+
+### Add webhook to github
+```
+http://*****.ngrok.io/github-webhook
+```
+
 ## Maven goals
 ### Run the unit tests
 ```
