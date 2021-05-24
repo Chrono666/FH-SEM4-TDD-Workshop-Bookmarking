@@ -1,6 +1,6 @@
-#Bookmarking tool  
+# Bookmarking tool  
 
-This project is part of the TDD workshop 2021 and is supposed to get a feeling of test driven development.
+This project is part of the TDD workshop 2021 and is purpose is to get a feeling of test driven development.
 
 This project used Java and Maven.
 
