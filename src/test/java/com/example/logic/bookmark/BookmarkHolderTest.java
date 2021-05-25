@@ -495,4 +495,27 @@ public class BookmarkHolderTest {
         //Assert
         assertTrue(listEmpty);
     }
+
+    @Test
+    public void ensureBookmarkWithHighestRatingIsAtIndexZero() {
+        // Arrange
+        BookmarkHolder holder = new BookmarkHolder();
+        holder.addUrlAsBookmark("https://www.tu-wien.at");
+        holder.addUrlAsBookmark("https://www.google.at");
+        holder.addUrlAsBookmark("https://www.tu-wien.at");
+        holder.addUrlAsBookmark("https://www.google.at");
+        holder.addUrlAsBookmark("https://www.twitter.com");
+        holder.addUrlAsBookmark("https://www.google.at");
+
+        //Act
+        List<Bookmark> sortedBookmarks = holder.sortBookmarksByRating();
+        String firstPlaceUrl = sortedBookmarks.get(0).getUrl();
+        String secondPlaceUrl = sortedBookmarks.get(1).getUrl();
+        String thirdPlaceUrl = sortedBookmarks.get(2).getUrl();
+
+        //Assert
+        assertEquals(firstPlaceUrl, "https://www.google.at");
+        assertEquals(secondPlaceUrl, "https://www.tu-wien.at");
+        assertEquals(thirdPlaceUrl, "https://www.twitter.com");
+    }
 }

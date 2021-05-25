@@ -2,9 +2,7 @@ package com.example.logic.bookmark;
 
 import com.example.logic.util.UrlUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -119,5 +117,11 @@ public class BookmarkHolder {
             throw new NoSuchElementException();
         }
         return bookmarks;
+    }
+
+    public List<Bookmark> sortBookmarksByRating() {
+        List<Bookmark> sortedBookmarks = new ArrayList<>(bookmarks);
+        sortedBookmarks.sort(Comparator.comparing(Bookmark::getRating).reversed());
+        return sortedBookmarks;
     }
 }
